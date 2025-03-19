@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from '@angular/fire/auth';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth, private firestore: Firestore, private router: Router) {}
+  constructor(private auth: Auth, private firestore: Firestore) {}
 
   async register(email: string, password: string): Promise<any> {
     try {
@@ -30,7 +29,6 @@ export class AuthService {
   async login(email: string, password: string): Promise<any> {
     try {
       const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-      this.router.navigate(['/home']);
       return userCredential;
     } catch (error) {
       throw error;
