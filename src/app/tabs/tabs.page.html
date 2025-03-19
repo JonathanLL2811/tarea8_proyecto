@@ -1,18 +1,18 @@
 <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home" href="/tabs/home">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="gallery" href="/tabs/gallery">
-        <ion-icon name="images"></ion-icon>
-        <ion-label>Galería</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="profile" href="/tabs/profile">
-        <ion-icon name="person"></ion-icon>
-        <ion-label>Perfil</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="navigateToHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="gallery" (click)="navigateToGallery()">
+      <ion-icon name="images"></ion-icon>
+      <ion-label>Galería</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile" (click)="navigateToProfile()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

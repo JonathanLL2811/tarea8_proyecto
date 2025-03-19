@@ -82,13 +82,13 @@ import {
   setIonicClasses,
   setOverlayId,
   toastController
-} from "./chunk-7NKNOIBR.js";
+} from "./chunk-GFNYBQKF.js";
 import {
   iosTransitionAnimation
-} from "./chunk-FOPDQ3YF.js";
+} from "./chunk-LQBT2S2V.js";
 import {
   mdTransitionAnimation
-} from "./chunk-QQDIVKUG.js";
+} from "./chunk-6BF77WDN.js";
 import {
   LIFECYCLE_DID_LEAVE,
   LIFECYCLE_WILL_LEAVE,
@@ -99,7 +99,7 @@ import {
   setPageHidden,
   transition,
   waitForMount
-} from "./chunk-LUBI2L3J.js";
+} from "./chunk-DRBPQCH5.js";
 import {
   printIonError,
   printIonWarning
@@ -138,10 +138,6 @@ import {
   isPlatform
 } from "./chunk-2MBYNCVA.js";
 import {
-  doc,
-  win
-} from "./chunk-ACUVEYEP.js";
-import {
   Build,
   H,
   Host,
@@ -154,20 +150,24 @@ import {
   writeTask
 } from "./chunk-DWM4ZTWI.js";
 import {
-  ActivatedRoute,
-  Router
-} from "./chunk-7GUFKKXN.js";
-import "./chunk-VD2UR2UZ.js";
+  doc,
+  win
+} from "./chunk-ACUVEYEP.js";
 import {
   NG_VALUE_ACCESSOR
-} from "./chunk-6DISRG25.js";
+} from "./chunk-3D2SKI6K.js";
+import {
+  ActivatedRoute,
+  Router
+} from "./chunk-MGKRLGZR.js";
+import "./chunk-XKDRY5JH.js";
 import {
   CommonModule,
   DOCUMENT,
   Location,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-SBWX6LCI.js";
+} from "./chunk-HU6EGLPS.js";
 import {
   APP_INITIALIZER,
   Attribute,
@@ -220,8 +220,7 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-R46H32EX.js";
-import "./chunk-BJDQXEUJ.js";
+} from "./chunk-F655I5GX.js";
 import {
   __decorate
 } from "./chunk-N25OJVE5.js";

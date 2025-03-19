@@ -1,21 +1,6 @@
 import {
-  iosTransitionAnimation
-} from "./chunk-EZ5LJP5N.js";
-import {
   mdTransitionAnimation
 } from "./chunk-2GDODUTR.js";
-import {
-  bootstrapLazy,
-  componentOnReady,
-  createAnimation,
-  doc,
-  getIonMode,
-  getIonPageElement,
-  getPlatforms,
-  initialize,
-  isPlatform,
-  printIonWarning
-} from "./chunk-7D5EXCLD.js";
 import {
   AngularDelegate,
   Config,
@@ -39,35 +24,50 @@ import {
   provideComponentInputBinding,
   raf,
   setIonicClasses
-} from "./chunk-7NKNOIBR.js";
-import "./chunk-FOPDQ3YF.js";
-import "./chunk-QQDIVKUG.js";
-import "./chunk-LUBI2L3J.js";
+} from "./chunk-GFNYBQKF.js";
+import "./chunk-LQBT2S2V.js";
+import "./chunk-6BF77WDN.js";
+import "./chunk-DRBPQCH5.js";
 import "./chunk-VEV5BJ2D.js";
 import "./chunk-OKPK4C3D.js";
 import "./chunk-4AF7KAXZ.js";
 import "./chunk-XZV7PWWG.js";
 import "./chunk-2MBYNCVA.js";
-import "./chunk-ACUVEYEP.js";
 import "./chunk-DWM4ZTWI.js";
+import "./chunk-ACUVEYEP.js";
 import {
-  ActivatedRoute,
-  Router
-} from "./chunk-7GUFKKXN.js";
-import "./chunk-VD2UR2UZ.js";
+  iosTransitionAnimation
+} from "./chunk-EZ5LJP5N.js";
+import {
+  bootstrapLazy,
+  componentOnReady,
+  createAnimation,
+  doc,
+  getIonMode,
+  getIonPageElement,
+  getPlatforms,
+  initialize,
+  isPlatform,
+  printIonWarning
+} from "./chunk-7D5EXCLD.js";
 import {
   MaxValidator,
   MinValidator,
   NG_VALIDATORS,
   NG_VALUE_ACCESSOR
-} from "./chunk-6DISRG25.js";
+} from "./chunk-3D2SKI6K.js";
+import {
+  ActivatedRoute,
+  Router
+} from "./chunk-MGKRLGZR.js";
+import "./chunk-XKDRY5JH.js";
 import {
   CommonModule,
   DOCUMENT,
   Location,
   NgIf,
   NgTemplateOutlet
-} from "./chunk-SBWX6LCI.js";
+} from "./chunk-HU6EGLPS.js";
 import {
   APP_INITIALIZER,
   Attribute,
@@ -123,8 +123,7 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-R46H32EX.js";
-import "./chunk-BJDQXEUJ.js";
+} from "./chunk-F655I5GX.js";
 import {
   __awaiter,
   __decorate,
