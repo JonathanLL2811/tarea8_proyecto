@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title>Perfiles</ion-title>
+      <ion-title>Mi Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
   
@@ -8,41 +8,76 @@
     <div *ngIf="isLoading" class="loading-spinner">
       <ion-spinner name="crescent"></ion-spinner>
     </div>
-    <div *ngIf="!isEditing">
-      <ion-list>
+  
+    <div *ngIf="!isLoading">
+      <ion-list *ngIf="!isEditing">
         <ion-item *ngFor="let profile of profiles" (click)="editProfile(profile.id)">
           <ion-avatar slot="start">
             <img [src]="profile.imageProfile || 'assets/user-default.png'" />
           </ion-avatar>
           <ion-label>
-            <h2>{{ profile.fullName }}</h2>
-            <p>{{ profile.identityNumber }}</p>
+            <h2>nombre completo: {{ profile.fullName }}</h2>
+            <p>Teléfono: {{ profile.phoneNumber }}</p>
+            <p>Fecha de nacimiento: {{ profile.birthDate | date:'dd/MM/yyyy' }}</p>
           </ion-label>
         </ion-item>
       </ion-list>
-      <ion-button (click)="isEditing = true">Crear Nuevo Perfil</ion-button>
-    </div>
-    <div *ngIf="isEditing">
-      <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
-        <ion-item>
-          <ion-label position="floating">Nombre completo:</ion-label>
-          <ion-input formControlName="fullName"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Número de Identidad:</ion-label>
-          <ion-input formControlName="identityNumber"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Fecha de nacimiento:</ion-label>
-          <ion-input formControlName="birthDate"></ion-input>
-          <ion-icon name="calendar-outline" slot="end"></ion-icon>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Número de teléfono:</ion-label>
-          <ion-input formControlName="phoneNumber"></ion-input>
-        </ion-item>
-        <ion-button type="submit">Guardar Perfil</ion-button>
-        <ion-button (click)="cancelEdit()">Cancelar</ion-button>
+  
+      <form *ngIf="isEditing" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre completo:</ion-label>
+            <ion-input formControlName="fullName"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="fullNameError">
+            <ion-text color="danger">
+              Nombre es requerido.
+            </ion-text>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Número de identidad:</ion-label>
+            <ion-input formControlName="identityNumber"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="identityNumberError">
+            <ion-text color="danger">
+              Número de identidad es requerido y debe tener 13 dígitos numéricos.
+            </ion-text>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Fecha de nacimiento:</ion-label>
+            <ion-datetime formControlName="birthDate" displayFormat="DD/MM/YYYY" placeholder="DD/MM/YYYY"></ion-datetime>
+          </ion-item>
+          <ion-item *ngIf="birthDateError">
+            <ion-text color="danger">
+              Fecha de nacimiento es requerida y no puede ser una fecha futura.
+            </ion-text>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="floating">Teléfono:</ion-label>
+            <ion-input formControlName="phoneNumber"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="phoneNumberError">
+            <ion-text color="danger">
+              Teléfono es requerido y debe tener 8 dígitos numéricos.
+            </ion-text>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label>Imagen de perfil:</ion-label>
+            <ion-img [src]="selectedImageFile || userProfileImage || 'assets/user-default.png'"></ion-img>
+            <ion-button (click)="selectProfileImage()">Cambiar imagen</ion-button>
+          </ion-item>
+        </ion-list>
+  
+        <ion-button expand="full" type="submit" [disabled]="profileForm.invalid">Guardar</ion-button>
+        <ion-button expand="full" color="danger" (click)="cancelEdit()">Cancelar</ion-button>
       </form>
+  
+      <div *ngIf="!isEditing && profiles.length > 0">
+        <ion-button expand="full" color="danger" (click)="logout()">Cerrar sesión</ion-button>
+      </div>
     </div>
   </ion-content>
