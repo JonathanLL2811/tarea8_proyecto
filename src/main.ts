@@ -5,7 +5,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from './environments/environment';
-import { FormsModule } from '@angular/forms';
+import { provideStorage, getStorage } from '@angular/fire/storage'; // Importa provideStorage y getStorage
 
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
@@ -18,6 +18,6 @@ bootstrapApplication(AppComponent, {
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    FormsModule,
+    provideStorage(() => getStorage()), // Añade provideStorage aquí
   ],
 });
