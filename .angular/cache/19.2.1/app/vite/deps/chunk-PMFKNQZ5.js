@@ -1,4 +1,13 @@
 import {
+  ActivatedRoute,
+  ChildrenOutletContexts,
+  NavigationStart,
+  PRIMARY_OUTLET,
+  Router,
+  RouterLink,
+  UrlSerializer
+} from "./chunk-MGKRLGZR.js";
+import {
   LIFECYCLE_DID_ENTER,
   LIFECYCLE_DID_LEAVE,
   LIFECYCLE_WILL_ENTER,
@@ -36,15 +45,6 @@ import {
 import {
   NgControl
 } from "./chunk-3D2SKI6K.js";
-import {
-  ActivatedRoute,
-  ChildrenOutletContexts,
-  NavigationStart,
-  PRIMARY_OUTLET,
-  Router,
-  RouterLink,
-  UrlSerializer
-} from "./chunk-MGKRLGZR.js";
 import {
   DOCUMENT,
   Location,
@@ -3982,4 +3982,4 @@ export {
    * (C) Ionic http://ionicframework.com - MIT License
    *)
 */
-//# sourceMappingURL=chunk-GFNYBQKF.js.map
+//# sourceMappingURL=chunk-PMFKNQZ5.js.map
