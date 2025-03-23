@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { getDownloadURL, ref, Storage, uploadBytes } from '@angular/fire/storage';
-import { Auth, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
-import { Firestore, doc, getDoc, setDoc, collection, getDocs, Timestamp } from '@angular/fire/firestore';
+import { Auth, signOut, User } from '@angular/fire/auth';
+import { Firestore, doc, getDoc, setDoc, collection, getDocs, Timestamp, updateDoc } from '@angular/fire/firestore';
 import { v4 as uuidv4 } from 'uuid';
 import { Router } from '@angular/router';
+import { PushNotifications, Token } from '@capacitor/push-notifications';
 
 interface UserProfile {
   id: string;
@@ -51,6 +52,36 @@ export class ProfilePage implements OnInit {
 
   async ngOnInit() {
     await this.loadProfiles();
+    await this.setupPushNotifications();
+  }
+
+  async setupPushNotifications() {
+    let permStatus = await PushNotifications.requestPermissions();
+
+    if (permStatus.receive === 'granted') {
+      PushNotifications.register();
+
+      PushNotifications.addListener('registration', async (token: Token) => {
+        console.log('Token de registro:', token.value);
+        await this.saveFcmToken(token.value);
+      });
+
+      PushNotifications.addListener('registrationError', (error: any) => {
+        console.error('Error de registro:', error);
+      });
+
+      PushNotifications.addListener('pushNotificationReceived', (notification) => {
+        console.log('Notificación recibida:', notification);
+        // Maneja la notificación aquí (por ejemplo, muestra un mensaje en la interfaz de usuario)
+      });
+    }
+  }
+
+  async saveFcmToken(token: string) {
+    const user = this.auth.currentUser;
+    if (user) {
+      await updateDoc(doc(this.firestore, 'usuarios', user.uid), { fcmDevice: token });
+    }
   }
 
   async loadProfiles() {

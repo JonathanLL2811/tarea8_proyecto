@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925083118783",
+    "project_id": "proyectodm2jona",
+    "storage_bucket": "proyectodm2jona.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925083118783:android:5a01e140ada436fe3caa0a",
+        "android_client_info": {
+          "package_name": "com.jonathanlorenzana.tuapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCig6-mAWVZz53EOr7vUC_B8FHqrMjvH7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
