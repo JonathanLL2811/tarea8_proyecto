@@ -1,0 +1,40 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input
+        type="email"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': email?.invalid && email?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="email?.invalid && email?.touched" style="color: red;">
+      <div *ngIf="email?.errors?.['required']">El correo es requerido.</div>
+      <div *ngIf="email?.errors?.['email']">El correo es inválido.</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input
+        type="password"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': password?.invalid && password?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="password?.invalid && password?.touched" style="color: red;">
+      La contraseña es requerida.
+    </div>
+
+    <ion-button
+      expand="full"
+      type="submit"
+      [disabled]="registerForm.invalid"
+    >
+      Registrarse
+    </ion-button>
+  </form>
+
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+</ion-content>

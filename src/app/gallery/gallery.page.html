@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Galería</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let gallery of galleries">
+        <ion-card>
+          <img [src]="gallery.photo" alt="Imagen de la galería" />
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Nombre del lugar</ion-label>
+              <ion-input value="{{ gallery.placeName }}" readonly></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Descripción</ion-label>
+              <ion-textarea value="{{ gallery.description }}" readonly></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Creado por</ion-label>
+              <ion-input value="{{ gallery.createBy }}" readonly></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Fecha de creación</ion-label>
+              <ion-input value="{{ gallery.createdAt.toDate() | date:'medium' }}" readonly></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

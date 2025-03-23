@@ -1,0 +1,7 @@
+{
+  "name": "tarea7",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
