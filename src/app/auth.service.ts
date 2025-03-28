@@ -1,24 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from '@angular/fire/auth';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, doc, setDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: Auth, private firestore: Firestore, private router: Router) {}
+  constructor(private auth: Auth, private firestore: Firestore, private router: Router) { }
 
-  async register(email: string, password: string): Promise<any> {
+  async register(email: string, password: string, firstName: string, lastName: string, identityNumber: string, phoneNumber: string): Promise<any> {
     try {
       const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
       const user = userCredential.user;
 
-      const usersCollection = collection(this.firestore, 'users');
-      await addDoc(usersCollection, {
+      // Crea un documento en la colección 'users' con el UID como ID del documento
+      const userDocRef = doc(this.firestore, 'users', user.uid);
+      await setDoc(userDocRef, {
         uid: user.uid,
         email: email,
-        password: password, // ¡Advertencia! No guardar contraseñas en texto plano en producción.
+        firstName: firstName,
+        lastName: lastName,
+        identityNumber: identityNumber,
+        phoneNumber: phoneNumber,
+        // No guardes la contraseña aquí.  Firebase Auth maneja eso de forma segura.
       });
 
       return userCredential;
@@ -30,7 +35,7 @@ export class AuthService {
   async login(email: string, password: string): Promise<any> {
     try {
       const userCredential = await signInWithEmailAndPassword(this.auth, email, password);
-      this.router.navigate(['/tabs']);
+      this.router.navigate(['/tabs']); // Cambia '/home' por '/tabs'
       return userCredential;
     } catch (error) {
       throw error;

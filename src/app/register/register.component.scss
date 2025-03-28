@@ -1,0 +1,67 @@
+.ion-padding {
+  padding: var(--ion-padding, 16px);
+}
+
+form {
+  margin-top: 20px;
+}
+
+ion-item {
+  margin-bottom: 20px;
+}
+
+ion-label {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+ion-input {
+  border-bottom: 2px solid #b3b3b3;
+  color: #000;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.is-invalid ion-input {
+  border-bottom-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+ion-button {
+  margin-top: 30px;
+  --background: #e53e3e; // Utiliza la variable de color de Ionic
+  color: white;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  margin-right: 10px;
+  color: #e53e3e; // Utiliza la variable de color de Ionic
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.password-toggle-icon {
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.calendar-icon {
+  color: #b3b3b3;
+}

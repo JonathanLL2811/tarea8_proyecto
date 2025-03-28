@@ -1,5 +1,31 @@
 <ion-content class="ion-padding">
   <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <ion-title>Registro</ion-title> 
+    <ion-title>_ _ _ _ _ _ _ _ _ _ _ _ </ion-title>
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input
+        type="text"
+        formControlName="firstName"
+        [ngClass]="{ 'is-invalid': firstName?.invalid && firstName?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="firstName?.invalid && firstName?.touched" style="color: red;">
+      <div *ngIf="firstName?.errors?.['required']">El nombre es requerido.</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input
+        type="text"
+        formControlName="lastName"
+        [ngClass]="{ 'is-invalid': lastName?.invalid && lastName?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="lastName?.invalid && lastName?.touched" style="color: red;">
+      <div *ngIf="lastName?.errors?.['required']">El apellido es requerido.</div>
+    </div>
+
     <ion-item>
       <ion-label position="floating">Correo electrónico</ion-label>
       <ion-input
@@ -22,7 +48,35 @@
       ></ion-input>
     </ion-item>
     <div *ngIf="password?.invalid && password?.touched" style="color: red;">
-      La contraseña es requerida.
+      <div *ngIf="password?.errors?.['required']">La contraseña es requerida.</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Número de identidad</ion-label>
+      <ion-input
+        type="text"
+        formControlName="identityNumber"
+        [ngClass]="{ 'is-invalid': identityNumber?.invalid && identityNumber?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="identityNumber?.invalid && identityNumber?.touched" style="color: red;">
+      <div *ngIf="identityNumber?.errors?.['required']">El número de identidad es requerido.</div>
+      <div *ngIf="identityNumber?.errors?.['minlength']">El número de identidad debe tener al menos 13 dígitos.</div>
+      <div *ngIf="identityNumber?.errors?.['pattern']">El número de identidad debe contener solo números.</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Número de teléfono</ion-label>
+      <ion-input
+        type="text"
+        formControlName="phoneNumber"
+        [ngClass]="{ 'is-invalid': phoneNumber?.invalid && phoneNumber?.touched }"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched" style="color: red;">
+      <div *ngIf="phoneNumber?.errors?.['required']">El número de teléfono es requerido.</div>
+      <div *ngIf="phoneNumber?.errors?.['minlength']">El número de teléfono debe tener al menos 8 dígitos.</div>
+      <div *ngIf="phoneNumber?.errors?.['pattern']">El número de teléfono debe contener solo números.</div>
     </div>
 
     <ion-button

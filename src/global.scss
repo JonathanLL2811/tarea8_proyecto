@@ -35,3 +35,15 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+// Estilos globales muy generales (evita selectores de elementos específicos)
+body {
+  font-family: 'Arial', sans-serif;  // Ejemplo de estilo global
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.red-button {
+    background-color: var(--ion-color-danger) !important;
+    color: white !important;
+}
