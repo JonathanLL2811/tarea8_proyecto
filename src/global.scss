@@ -1,49 +1,146 @@
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
-/* Core CSS required for Ionic components to work properly */
+/* Core CSS */
 @import "@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* Ionic Dark Mode */
 @import '@ionic/angular/css/palettes/dark.system.css';
 
-// Estilos globales muy generales (evita selectores de elementos específicos)
-body {
-  font-family: 'Arial', sans-serif;  // Ejemplo de estilo global
-  background-color: #f4f4f4;
-  color: #333;
+/* ==========================================================================
+ * Variables Globales
+ * ========================================================================== */
+:root {
+  /**
+   * App Colors
+   */
+  --primary:       #e53e3e;
+  --primary-rgb:   229, 62, 62;
+  --primary-contrast:  #ffffff;
+  --primary-contrast-rgb: 255, 255, 255;
+
+  --secondary:     #f0f0f0;
+  --secondary-rgb:   240, 240, 240;
+  --secondary-contrast: #333333;
+  --secondary-contrast-rgb: 51, 51, 51;
+
+  --tertiary:      #4a5568;
+  --tertiary-rgb:    74, 85, 104;
+  --tertiary-contrast: #ffffff;
+  --tertiary-contrast-rgb: 255, 255, 255;
+
+  --success:       #388069;
+  --success-rgb:     56, 128, 105;
+  --success-contrast:  #ffffff;
+  --success-contrast-rgb: 255, 255, 255;
+
+  --warning:       #ffc209;
+  --warning-rgb:     255, 194, 9;
+  --warning-contrast:  #000000;
+  --warning-contrast-rgb: 0, 0, 0;
+
+  --danger:        #dc3545;
+  --danger-rgb:      220, 53, 69;
+  --danger-contrast:   #ffffff;
+  --danger-contrast-rgb: 255, 255, 255;
+
+  --dark:          #222428;
+  --dark-rgb:        34, 36, 40;
+  --dark-contrast:   #ffffff;
+  --dark-contrast-rgb: 255, 255, 255;
+
+  --medium:        #8e8e93;
+  --medium-rgb:      142, 142, 147;
+  --medium-contrast:  #ffffff;
+  --medium-contrast-rgb: 255, 255, 255;
+
+  --light:         #f8f9fa;
+  --light-rgb:       248, 249, 250;
+  --light-contrast:  #000000;
+  --light-contrast-rgb: 0, 0, 0;
+
+  /**
+   * Text Colors
+   */
+  --text-color: #2d3748;
+  --text-light: #718096;
+  --heading-color: #e53e3e;
+
+  /**
+   * Background Colors
+   */
+  --background: #ffffff;
+  --background-alt: #f7fafc;
+
+    /**
+    * Card colors
+    */
+   --card-background: #fff;
+
+  /**
+   * Font
+   */
+  --heading-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --body-font:    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* ==========================================================================
+ * Estilos Base del HTML
+ * ========================================================================== */
+body {
+  font-family: var(--body-font);
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+ * Estilos de Botones
+ * ========================================================================== */
+ion-button {
+  --background: var(--primary);
+  --background-activated: color-mix(in srgb, var(--primary) 10%, black);
+  --color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+ion-button:hover {
+  --background: color-mix(in srgb, var(--primary) 10%, black);
+}
+
+/* Estilo específico para botones dentro de ion-toolbar */
+ion-toolbar ion-button {
+  border-radius: 8px;
+}
+
+/* Estilo específico para botones con la clase .red-button */
 .red-button {
-    background-color: var(--ion-color-danger) !important;
-    color: white !important;
+  background-color: var(--ion-color-danger) !important;
+  color: white !important;
+  border-radius: 8px;
 }

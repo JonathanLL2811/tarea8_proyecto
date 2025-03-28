@@ -1,9 +1,9 @@
 import {
-  doc
-} from "./chunk-ACUVEYEP.js";
-import {
   pointerCoord
 } from "./chunk-OKPK4C3D.js";
+import {
+  doc
+} from "./chunk-ACUVEYEP.js";
 import "./chunk-EGSMBJJY.js";
 
 // node_modules/@ionic/core/components/index9.js
@@ -148,4 +148,4 @@ export {
    * (C) Ionic http://ionicframework.com - MIT License
    *)
 */
-//# sourceMappingURL=index9-VPAMAKBN.js.map
+//# sourceMappingURL=index9-R3IKBFKQ.js.map

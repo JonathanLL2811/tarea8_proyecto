@@ -1,9 +1,24 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title>Inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-label>¡Bienvenido a la página de inicio!</ion-label>
-  </ion-content>
+  <ion-toolbar>
+    <ion-title>Rick and Morty Characters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="loading" class="loading-spinner">
+    <ion-spinner color="primary"></ion-spinner>
+    <p>Loading characters...</p>
+  </div>
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let character of characters">
+      <ion-thumbnail slot="start">
+        <img [src]="character.image" alt="{{ character.name }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ character.name }}</h2>
+        <p>Status: {{ character.status }}</p>
+        <p>Species: {{ character.species }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

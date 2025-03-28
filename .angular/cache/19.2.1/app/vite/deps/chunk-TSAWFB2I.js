@@ -1,37 +1,11 @@
 import {
-  MENU_BACK_BUTTON_PRIORITY,
-  OVERLAY_BACK_BUTTON_PRIORITY,
-  shouldUseCloseWatcher
-} from "./chunk-XZV7PWWG.js";
-import {
-  BACKDROP_NO_SCROLL
-} from "./chunk-4AF7KAXZ.js";
-import {
-  ActivatedRoute,
-  ChildrenOutletContexts,
-  NavigationStart,
-  PRIMARY_OUTLET,
-  Router,
-  RouterLink,
-  UrlSerializer
-} from "./chunk-MGKRLGZR.js";
-import {
   LIFECYCLE_DID_ENTER,
   LIFECYCLE_DID_LEAVE,
   LIFECYCLE_WILL_ENTER,
   LIFECYCLE_WILL_LEAVE,
   LIFECYCLE_WILL_UNLOAD,
   createAnimation
-} from "./chunk-TYNT5GOZ.js";
-import {
-  config,
-  getIonMode,
-  getPlatforms,
-  isPlatform
-} from "./chunk-2MBYNCVA.js";
-import {
-  doc
-} from "./chunk-ACUVEYEP.js";
+} from "./chunk-DRBPQCH5.js";
 import {
   printIonWarning
 } from "./chunk-VEV5BJ2D.js";
@@ -43,8 +17,34 @@ import {
   removeEventListener
 } from "./chunk-OKPK4C3D.js";
 import {
+  BACKDROP_NO_SCROLL
+} from "./chunk-4AF7KAXZ.js";
+import {
+  MENU_BACK_BUTTON_PRIORITY,
+  OVERLAY_BACK_BUTTON_PRIORITY,
+  shouldUseCloseWatcher
+} from "./chunk-XZV7PWWG.js";
+import {
+  config,
+  getIonMode,
+  getPlatforms,
+  isPlatform
+} from "./chunk-2MBYNCVA.js";
+import {
+  doc
+} from "./chunk-ACUVEYEP.js";
+import {
   NgControl
 } from "./chunk-3D2SKI6K.js";
+import {
+  ActivatedRoute,
+  ChildrenOutletContexts,
+  NavigationStart,
+  PRIMARY_OUTLET,
+  Router,
+  RouterLink,
+  UrlSerializer
+} from "./chunk-TERDZJPI.js";
 import {
   DOCUMENT,
   Location,
@@ -3982,4 +3982,4 @@ export {
    * (C) Ionic http://ionicframework.com - MIT License
    *)
 */
-//# sourceMappingURL=chunk-APSAAFBB.js.map
+//# sourceMappingURL=chunk-TSAWFB2I.js.map

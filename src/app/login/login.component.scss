@@ -1,0 +1,7 @@
+ion-button {
+    --background: var(--primary);
+    --background-activated: color-mix(in srgb, var(--primary) 10%, black);
+    --color: #fff;
+    font-weight: bold;
+    border-radius: 80px;  /* Añadimos border-radius aquí */
+  }

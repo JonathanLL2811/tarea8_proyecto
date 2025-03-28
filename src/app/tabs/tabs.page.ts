@@ -1,17 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonicModule } from '@ionic/angular'; // Importa IonicModule
-import { CommonModule } from '@angular/common'; // Importa CommonModule
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { home, images, person } from 'ionicons/icons'; // Importa los íconos
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule], // Agrega IonicModule y CommonModule a imports
+  imports: [IonicModule, CommonModule],
 })
 export class TabsPage {
-  constructor(private router: Router) {}
+  homeIcon = home;
+  imagesIcon = images;
+  personIcon = person;
+
+  constructor(private router: Router) {
+     addIcons({
+      home: home,
+      images: images,
+      person: person,
+    });
+  }
 
   navigateToHome() {
     this.router.navigate(['/tabs/home']);
